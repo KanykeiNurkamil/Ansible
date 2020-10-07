@@ -1,0 +1,21 @@
+---
+  - name: add users with uid to the specific group 
+    hosts: remote-hosts
+    tasks: 
+      - name: add user Amy to remote hosts
+        user: 
+          name: Amy
+          uid: 2100
+          group: SystemAdmin
+
+      - name: add user Bill to remote hosts
+        user: 
+          name: Bill
+          uid: 2101
+          group: SystemEngineer
+
+      - name: add user Jill to remote hosts
+        user: 
+          name: Jill
+          uid: 2102
+          group: LeadEngineer

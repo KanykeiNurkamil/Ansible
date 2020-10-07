@@ -1,0 +1,6 @@
+---
+  - name: This is playbook to install curl
+    hosts: db
+    tasks: 
+      - name: install curl 
+        yum: name=curl state=present

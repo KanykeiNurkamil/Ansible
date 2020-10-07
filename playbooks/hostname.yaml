@@ -1,0 +1,13 @@
+---
+  - name: This is playbook to change the name of the host
+    hosts: development 
+    tasks: 
+      - name: change hostname "testapp"
+        when: ansible_hostname=="testapp"
+        hostname: 
+          name: application 
+
+      - name: change hostname "db"
+        when: ansible_hostname=="db"
+        hostname: 
+          name: database 

@@ -1,0 +1,9 @@
+---
+  - name: create file in all managed servers
+    hosts: all
+    tasks:
+      - name: create file in all managed servers 
+        file:
+          path: /tmp/ansibletest1
+          state: touch
+          mode: '774'
