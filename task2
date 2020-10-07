@@ -1,0 +1,16 @@
+# Add-hoc commands for Task2:
+# After adding 2 new hosts, established ssh connection  in both server.
+# Generated ssh keys for user "root" in each server. 
+# Put that previously genderated keys to "authorized_keys" 
+# of user "root" in server "ansible-server"
+
+To ping newly added hosts: ansible -i inventory/newhosts dev-servers -m ping
+
+To find the distribution of newly added hosts: 
+ansible -i inventory/newhosts dev-servers -m setup -a "filter=ansible_distribution*"
+
+To check the free memory of newly added hosts:
+ansible -i inventory/newhosts dev-servers -m shell -a "free"
+
+To check storage available in newly added hosts
+ansible -i inventory/newhosts dev-servers -m shell -a "df -h"

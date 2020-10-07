@@ -1,0 +1,21 @@
+---
+  - name: This playbook to install apache in new servers
+    hosts: dev-servers
+    tasks:
+      - name: install apache
+        yum: 
+          name: 
+            - httpd
+
+      - name: to start apache
+        when: ansible_hostname=="Host1"
+        service:
+          name: httpd
+          state: started
+          enabled: yes
+
+      - name: to start apache 
+        when: ansible_hostname=="Host2"
+        systemd:
+          name: httpd
+          state: started
