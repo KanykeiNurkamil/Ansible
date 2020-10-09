@@ -1,0 +1,7 @@
+---
+  - name: Check the status of 
+    hosts: production
+    tasks: 
+      - name: Check the status of apache
+        command: rpm -q httpd
+        register: rpm_check
