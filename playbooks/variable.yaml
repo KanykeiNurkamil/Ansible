@@ -1,0 +1,7 @@
+---
+  - name: Install the package in managed servers
+    hosts: "{{ group }}"
+    tasks: 
+      - name: install the package that is defined in variable 
+        yum:
+          name: "{{ package }}" 
