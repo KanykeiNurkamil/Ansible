@@ -1,10 +1,17 @@
 ---
-  - name: add users with uid to the specific group 
+  - name: Users Management 
     hosts: "{{ group }}"
-    gather_facts: no
+    gather_facts: "{{ gather_facts }}"
     vars_files: 
       - "../variables/addusers-values.yaml" 
     tasks: 
-      - name: add users to remote hosts
+    # Task for User 1 - values defined in ../variables/addusers-values.yaml
+      - name: User 1
         user: 
-          name: "{{ name_user }}"
+          name: "{{ name_user1 }}"
+          uid: "{{ uid_1 }}"
+    # Task for User 1 - values defined in ../variables/addusers-values.yaml
+      - name: User 1
+        user: 
+          name: "{{ name_user2 }}"
+          uid: "{{ uid_2 }}"
