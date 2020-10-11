@@ -5,9 +5,18 @@
     vars_files: 
       - "../variables/testfile-values.yaml"
     tasks:
-     # Task to create file- values defined in ../variables/testfile-values.yaml
       - name: create file in managed servers 
         file:
           path: /tmp/{{ file_name }}
           state: "{{ file_state }}"
           mode: "{{ file_mode }}"
+      - name: write "Hello world!" inside the file we just created 
+        lineinfile: 
+          path: /tmp/{{ file_name }}
+          line: "{{ line }}"
+          create: yes
+      - name: 
+        blockinfile:  
+          path: /tmp/{{ file_name }}
+          block: |
+            {{ block }}
