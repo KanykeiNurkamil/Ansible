@@ -7,8 +7,4 @@
     tasks: 
       - name: add users to remote hosts
         user: 
-          name: "{{ name_user1 }}"
-          
-      - name: add users to remote hosts
-        user: 
-          name: "{{ name_user2 }}"
+          name: "{{ name_user }}"
